@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 app.post('/repeat-after-me', function(req, res) {
     var speech = req.body.result && req.body.result.parameters &&
-                req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Master... I couldn't understand... please speak to me."
+                req.body.result.parameters.userInput ? req.body.result.parameters.userInput : "Master... I couldn't understand... please speak to me."
     return res.json({
         speech: speech,
         displayText: speech,
